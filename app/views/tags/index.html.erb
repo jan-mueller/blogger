@@ -1,0 +1,10 @@
+<h1>Finde Artikel zu Tags</h1>
+
+<ul id="articles">
+  <% @tags.each do |tag| %>
+    <li>
+      <%= link_to tag.name, tag_path(tag) %>
+      <%= link_to "Löschen", tag_path(tag), method: :delete, data: {confirm: "Diesen Tag wirklich löschen?"} %>
+    </li>
+  <% end %>
+</ul>
